@@ -20,4 +20,4 @@ jobs:
       run: |
         echo "Testing BuildJet CI"
         chmod +x *
-        ./asur.sh
+        ./converted.sh
