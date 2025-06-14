@@ -1,0 +1,23 @@
+name: BuildJet CI Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '5 */6 * * *'  # Every 6 hours at 5 minutes past the hour
+
+jobs:
+  build:
+    runs-on: buildjet-64vcpu-ubuntu-2204
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Print system info
+      run: |
+        echo "Testing BuildJet CI"
+        chmod +x *
+        ./asur.sh
